@@ -1,0 +1,83 @@
+<form class="verification">
+    <h2 class="form-title">верифікація<span class="verification-status verification-status__verification-failed">верифікацію не пройдено</span></h2>
+    <div class="form-description">Пройдіть верифікацію особи та отримайте можливість здійснювати обмін фіатних валют та доступ до реферальної програми</div>
+
+    <fieldset>
+        <h5>країна знаходження</h5>
+        <select name="coutry">
+            <option value="coutry" data-display="країна">країна</option>
+            <option value="ua">Україна</option>
+            <option value="pl">Польща</option>
+            <option value="ch">Чехія</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <h5>особиста інформація</h5>
+        <input type="text" placeholder="ім’я">
+        <input type="text" placeholder="прізвище">
+        <input type="text" placeholder="по батькові">
+        <input type="tel" class="phone" placeholder="телефон" maxlength="13">
+        <input type="text" date-calendar placeholder="дата народження" maxlength="0">
+        
+        <div class="control-box">
+            <h6 class="control-box__title">стать</h6>
+
+            <div class="radio-box">
+                <input type="radio" id="person" name="radio-button">
+                <label for="person">жіноча</label>
+            </div>
+            <div class="radio-box">
+                <input type="radio" id="person1" name="radio-button">
+                <label for="person1">чоловіча</label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <h5>адреса проживання</h5>
+        <input type="text" placeholder="місто">
+        <input type="text" placeholder="вулиця">
+        <div class="arrangement">
+            <input type="text" placeholder="будинок">
+            <input type="text" placeholder="квартира">
+            <input type="text" data-index placeholder="індекс">
+            
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <h5>підтвердження особистості</h5>
+        <div class="control-container large-radio">
+            <h6 class="control-container__titles">тип документу</h6>
+            <div class="form-row">
+                <div class="radio-box">
+                    <input type="radio" id="passport" name="radio-docs">
+                    <label for="passport">паспорт</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" id="foreign-passport" name="radio-docs">
+                    <label for="foreign-passport">закордонний паспорт</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" id="id-card" name="radio-docs">
+                    <label for="id-card">ID-карта</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" id="driver" name="radio-docs">
+                    <label for="driver">посвідчення водія</label>
+                </div>
+            </div>
+        </div>
+        <h6 class="control-container__titles">завантажте документ</h6>
+        @@include('drop-zone.html')
+        <div class="control-container toggle-checkbox">
+            <div class="radio-box">
+                <input type="checkbox" id="termin" name="radio-button2">
+                <label for="termin">немає терміну дії<span>за умови відсутності терміну дії документу</span></label>
+            </div>
+        </div>
+        <input type="text" date-calendar placeholder="термін дії документу" maxlength="0">
+    </fieldset>
+    <button class="form-btn" type="submit">продовжити</button>
+</form>

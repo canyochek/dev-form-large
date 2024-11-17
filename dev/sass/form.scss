@@ -1,0 +1,424 @@
+.verification{
+    max-width: 950px;
+    width: 100%;
+    margin: 0 auto;
+}
+.form-title{
+    text-transform: lowercase;
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    line-height: 1.25px;
+}
+
+.form-description{
+    max-width: 705px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 60px;
+    line-height: 1.7;
+    color: $status-unverified;
+}
+
+.verification-status{
+    display: inline-block;
+    border: 1px solid $border-verification;
+    border-radius: 3px;
+    padding: 6px 10px 6px 10px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 30px;
+    line-height: 1.25;
+    &__application-considered{
+        color:$verification;
+    }
+    &__verified{
+        color:$accent;
+    }
+    &__verification-failed{
+        color:$errors;
+    }
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+    h5{
+        color: $stroke;
+        font-weight: 400;
+        border-bottom: 1px solid $stroke;
+        padding-bottom: 12px;
+        margin-bottom: 10px;
+        line-height: 1.7
+    }
+}
+
+input{
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: $system;
+    border: 1px solid $stroke;
+    border-radius: 8px;
+    padding: 30px;
+    color: $titles;
+    transition: .2s;
+    line-height: 25px;
+    &:hover{
+        border: 1px solid $text;
+        transition: .2s;
+    }
+    &:focus{
+        border: 1px solid $text;
+    }
+    &:focus::placeholder{
+        color: $system;
+    }
+}
+
+.arrangement {
+    display: flex;
+    gap: 30px;
+}
+
+.nice-select {
+    @extend input;
+    height:auto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+    .list{
+        width: 100%;
+        background-color: $background;
+        border: 1px solid $stroke;
+        border-radius: 8px;
+        li{
+            border-bottom: 1px solid $stroke;
+            padding: 16px 0;
+            color:$titles;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0 25px;
+        }
+        li:last-child{
+            border-bottom: 0;
+        }
+    }
+
+    &:after{
+        border-bottom: 2px solid $titles;
+        border-right: 2px solid $titles;
+        width: 9px;
+        height: 9px;
+        right: 30px;
+    }
+    &:hover:after{
+        border-bottom: 2px solid $accent;
+        border-right: 2px solid $accent;
+    }
+
+}
+.nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+        background-color: $background;
+        color: $accent-hover;
+}
+
+.control-box {
+    margin-top: 10px;
+}
+
+
+::placeholder{
+    color: $titles;
+}
+
+[data-display] {
+    display: none;
+}
+
+.control-box__title{
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 400;
+    color: $status-unverified;
+    line-height: 1.7;
+}
+
+.radio-box {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 50px;
+    color: $titles;
+    position: relative;
+}
+
+[type="radio"],
+[type="checkbox"] {
+    display: none;
+    + label{
+        padding-left: 42px;
+        line-height: 1.25px;
+        &:before {
+            content:"";
+            transition: .3s;
+            position: absolute;
+            top: -1px;
+            left: 0px;
+            width: 27px;
+            height: 27px;
+            border: 1px solid $stroke;
+            border-radius: 20px;
+            background-color: $system;
+        }    
+        &:hover{
+            &:before {
+            border: 1px solid $accent;
+            background-color: $hover-button;
+            transition: .3s;
+            background-position: center;
+            }  
+        }
+    }
+        &:checked {
+            + label{
+                &:before {
+                    border: 1px solid $accent;
+                    background: url(assets/img/check.svg) no-repeat center #152108;
+                }
+            }
+            
+        }    
+}
+
+.ui-widget.ui-widget-content{
+    border: 1px solid $stroke;
+    border-radius: 10px;
+}
+.calendar-container{
+    position: relative;
+    cursor: pointer;
+    img{
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        width: 24px;
+        height: 24px;
+    } 
+}
+.ui-datepicker table{
+    background-color: $system;
+    .ui-state-default {
+        background-color: $system;
+        border: 1px solid $system;
+        border-radius: 7px;
+        color: $titles;
+        text-align: center;
+    }
+    .ui-state-default:hover{
+        color: $accent;
+    }
+    }
+
+.ui-datepicker-header, .ui-widget-header, .ui-helper-clearfix, .ui-corner-all{
+    border: 0;
+    background-color: $system;
+}
+
+.ui-datepicker-prev{
+    background: url(assets/img/left.svg) center no-repeat;
+    &:hover {
+        background-color: transparent;
+        background: url(assets/img/left.svg) center no-repeat;
+        border: 0;
+        cursor: pointer;
+    }
+}
+
+.ui-datepicker-next{
+    background: url(assets/img/right.svg) center no-repeat;
+    &:hover {
+        background-color: transparent;
+        background: url(assets/img/right.svg) center no-repeat;
+        border: 0;
+        cursor: pointer;
+    }
+}
+
+.ui-datepicker-month,.ui-datepicker-year{
+    font-size: 16px;
+    font-weight: 400;
+    color: $titles;
+}
+
+.large-radio {
+    display: flex;
+    flex-wrap: wrap;
+    .control-container__titles {
+        width: 100%;
+        margin-bottom: 20px;
+        line-height: 34px;
+    }
+
+    .form-row {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .radio-box{
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    [type="radio"] + label{
+        padding: 24px 40px;
+        line-height: 28px;
+        min-height: 104px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    [type="radio"] + label:before{
+        transition: .3s;
+        background-color: $background;
+        border-radius: 12px;
+        inset: 0;
+        width: auto;
+        height: auto;
+        z-index: -1;
+    }
+
+    [type="radio"]:checked + label:before {
+        border: 1px solid $accent;
+        background: #152108;
+    }
+}
+
+input#file-input {
+    display: none;
+}
+
+div#drop-zone{
+    width: 100%;
+    label{
+        min-height: 171px;
+        transition: .3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%234F4F4F' stroke-width='3' stroke-dasharray='15 15' stroke-dashoffset='23' stroke-linecap='square'/%3e%3c/svg%3e");
+        border-radius: 12px;
+        &:hover{
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%239AF03C' stroke-width='3' stroke-dasharray='15 15' stroke-dashoffset='23' stroke-linecap='square'/%3e%3c/svg%3e");
+            transition: .3s;
+        }
+    }
+
+    span{
+        &:first-child{
+        color: $titles;
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 8px;
+        }
+        &:last-child{
+            color: $stroke;
+        }
+        .color-accent{
+            color: $accent;
+            font-weight: 400;
+            font-size: 16px;
+        }
+    }
+}
+
+.toggle-checkbox{
+    [type="checkbox"] {
+    + label{    
+        padding-left: 77px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 23px;
+        span{
+            font-size: 16px;
+            font-weight: 400;
+            color: $status-unverified;
+        }
+        
+        &:before {
+            border-radius: 50px;
+            width: 56px;
+            height: 32px;
+            transition: .3s;
+            top: 50%;
+            transform: translate(0px, -50%);
+        }
+        &:hover{
+            &:before {
+            border: 1px solid $accent;
+            background-color: $system;
+            transition: .3s;
+            }  
+        }
+        &:after {
+            content:"";
+            position: absolute;
+            top: 13px;
+            left: 6px;
+            width: 20px;
+            height: 20px;
+            background: url(../assets/img/toggle.svg) no-repeat center;
+            transition: .3s;
+        }
+    }
+    &:checked {
+        + label{
+            &:before {
+                border: 1px solid $accent;
+                background: $hover-button;
+            }
+            &:after {
+                content:"";
+                position: absolute;
+                top: 13px;
+                left: 29px;
+                width: 20px;
+                height: 20px;
+                background: url(../assets/img/toggle-green.svg) no-repeat center;
+            }
+        } 
+    }  
+    }
+}
+
+.form-btn{
+    background-color: $accent;
+    color: $system;
+    border-radius: 8px;
+    max-width: 950px;
+    width: 100%;
+    padding: 30px;
+    transition: .3s;
+    line-height: 23px;
+    &:hover{
+        background-color: $accent-hover;
+        transition: .3s;
+    }
+}
+
+    
